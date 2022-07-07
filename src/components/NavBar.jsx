@@ -1,6 +1,11 @@
+import CartWidget from "./CartWidget";
+
+
+
+
 const NavBar = () => {
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav className="fondoScreen navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container-fluid">
                 <a className="navbar-brand text-white" href="#">Tienda</a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,6 +17,8 @@ const NavBar = () => {
                         <a className="nav-link text-white" href="#">Products</a>
                         <a className="nav-link text-white" href="#">Contact</a>
                         <a className="nav-link text-white"href="#">About us</a>
+                        <CartWidget />
+                        
                     </div>
                 </div>
             </div>
