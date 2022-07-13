@@ -2,7 +2,8 @@ import { useState } from "react";
 
 
 const useButton = () => {
-    const [counter, setCounter] = useState(0)
+    
+    const [counter, setCounter] = useState(0);
 
     function increase() {
         setCounter(counter + 1)
@@ -17,15 +18,15 @@ const useButton = () => {
 }
 
 const ButtonsCounters = () => {
-    const { counter, increase, decrease } = useButton
+    const { counter, increase, decrease } = useButton();
     return (
-        <>
-            <p className="text-uppercase text-black">{counter}</p>
+        
             <div>
+                <div className="text-uppercase text-black">{counter}</div>
                 <button className="btn btn-primary mx-5" onClick={increase}>+</button>
                 <button className="btn btn-primary" onClick={decrease}>-</button>
             </div>
-        </>
+        
     );
 }
 
