@@ -4,7 +4,7 @@ const ItemList = (props) => {
             {
                 props.items.map(
                     item => {
-                        return (<div className="card" style={{width: "18rem"}} >
+                        return (<div className="card" key={item.id} style={{width: "18rem"}} >
                             <img src={item.img} className="card-img-top" alt={item.name} />
                             <div className="card-body">
                                 <h5 className="card-title">{item.car} {item.model}</h5>

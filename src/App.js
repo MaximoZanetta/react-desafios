@@ -6,11 +6,14 @@ import NavBar from "./components/NavBar";
 
 
 function App() {
+  function add(counter){
+    alert(`Se agregaron ${counter} al carrito de compras`);
+  }
   return (
     <>
       <NavBar />
       <ItemListContainer greeting="Hola Mundo" />
-      <ItemCount stock={5} initial={1} />
+      <ItemCount stock={5} initial={1} onAdd={add} />
     </>
     
   )

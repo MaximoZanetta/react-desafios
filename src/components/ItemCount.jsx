@@ -14,12 +14,18 @@ const ItemCount = (props) => {
             setCounter(counter + 1)
         }
     }
+    function addToCart(){
+        if (props.stock > 0 && props.count < props.stock) {
+            props.onAdd(counter);
+        }
+    }
     return (
         <>
             <div>
                 <div className="text-uppercase text-black">{counter}</div>
                 <button className="btn btn-primary mx-5" onClick={()=>buttonHandler("+")}>+</button>
                 <button className="btn btn-primary" onClick={()=>buttonHandler("-")}>-</button>
+                <button className="btn btn-primary" onClick={addToCart}>Add to cart</button>
             </div>
         </>
     )
