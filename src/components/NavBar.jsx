@@ -1,5 +1,4 @@
 
-import Card from "./Card";
 import CartWidget from "./CartWidget";
 
 
@@ -25,7 +24,7 @@ const NavBar = () => {
                     </div>
                 </div>
             </nav>
-            <Card />
+            
         </>
 
     );
