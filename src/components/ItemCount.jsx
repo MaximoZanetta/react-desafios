@@ -22,10 +22,10 @@ const ItemCount = (props) => {
     return (
         <>
             <div>
-                <div className="text-uppercase text-white">{counter}</div>
-                <button className="btn btn-primary mx-5" onClick={()=>buttonHandler("+")}>+</button>
-                <button className="btn btn-primary" onClick={()=>buttonHandler("-")}>-</button>
-                <button className="btn btn-primary" onClick={addToCart}>Add to cart</button>
+                <div className="text-uppercase text-white text-center">{counter}</div>
+                <button className="btn btn-primary mx-2" onClick={()=>buttonHandler("+")}>+</button>
+                <button className="btn btn-primary mx-2" onClick={()=>buttonHandler("-")}>-</button>
+                <button className="btn btn-primary mx-2" onClick={addToCart}>Add to cart</button>
             </div>
         </>
     )
