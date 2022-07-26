@@ -1,9 +1,13 @@
 
+
 const CartWidget = () => {
     return ( 
-        <>
-         <img style={{width: 30}} src="https://icon-library.com/images/white-shopping-cart-icon/white-shopping-cart-icon-2.jpg" alt="" />
-        </>
+        
+         <div className="cart">
+            <box-icon name="cart"></box-icon>
+            <span className="total">0</span>
+         </div>
+        
      );
 }
  

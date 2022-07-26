@@ -5,7 +5,7 @@ import ItemCount from "./ItemCount";
 const ItemDetail = ({ item }) => {
     return (
         <>
-            <div class="position-absolute top-50 start-50 translate-middle">
+            <div className="position-absolute top-50 start-50 translate-middle pa-abajo">
                 <div className="card bg-dark" style={{ width: "30rem" }} >
                     <img src={item.img} className="card-img-top" alt={item.name} />
                     <div className="card-body d-flex flex-column justify-content-center">

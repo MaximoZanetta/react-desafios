@@ -4,6 +4,7 @@ import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import ItemListContainer from "./components/ItemListContainer";
 import NavBar from "./components/NavBar";
+import 'boxicons';
 
 
 
@@ -13,16 +14,13 @@ function App() {
   return (
     <>
     <BrowserRouter>
-      <Link to="/"><NavBar /> </Link> 
+    <NavBar />
     <Routes>
       <Route index path="/" element={<ItemListContainer />}></Route>
-      <Route exact path="/category/:id" element={<ItemListContainer />}></Route>
-      <Route exact path="/item/:id" element={<ItemDetailContainer />}></Route>
-    </Routes>
+      <Route path="/category/:name" element={<ItemListContainer />}></Route>
+      <Route path="/item/:id" element={<ItemDetailContainer />}></Route>
+    </Routes> 
     </BrowserRouter>
-      {/* <ItemListContainer  /> */}
-      {/* <ItemCount stock={5} initial={1} onAdd={add} /> */}
-      {/* <ItemDetailContainer /> */}
     </>
     
   )

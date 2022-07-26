@@ -9,7 +9,7 @@ const Item = ({ item }) => {
             <div className="card-body d-flex flex-column justify-content-center">
                 <h5 className="card-title text-white">{car} {model}</h5>
                 <p className="card-text text-white">Año {year}</p>
-                <Link to={`/item/${id}`}>
+                <Link className="d-flex justify-content-center" to={`/item/${id}`}>
                     <button className="btn btn-primary" >Ver mas</button> 
                 </Link>
             </div>
