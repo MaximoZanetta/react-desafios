@@ -5,6 +5,7 @@ import ItemDetailContainer from "./components/ItemDetailContainer";
 import ItemListContainer from "./components/ItemListContainer";
 import NavBar from "./components/NavBar";
 import 'boxicons';
+import Models from "./components/Models";
 
 
 
@@ -15,6 +16,7 @@ function App() {
     <>
     <BrowserRouter>
     <NavBar />
+    <Models />
     <Routes>
       <Route index path="/" element={<ItemListContainer />}></Route>
       <Route path="/category/:name" element={<ItemListContainer />}></Route>

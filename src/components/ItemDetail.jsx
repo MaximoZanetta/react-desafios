@@ -1,8 +1,15 @@
 
+import { useState } from "react";
+import CartAlert from "./CartAlert";
 import ItemCount from "./ItemCount";
 
 
 const ItemDetail = ({ item }) => {
+    const [amount, setAmount] = useState(0)
+    const addItem = (amount)=> {
+        console.log(amount)
+        setAmount(amount);
+    }
     return (
         <>
             <div className="position-absolute top-50 start-50 translate-middle pa-abajo">
@@ -13,7 +20,10 @@ const ItemDetail = ({ item }) => {
                         <p className="card-text text-white">Año {item.year}</p>
                         <p className="card-text text-white">Disponibles: {item.stock}</p>
                         <p className="card-text text-white">$ {item.price} USD</p>
-                        <ItemCount stock={item.stock} initial={0} onAdd={add} />
+                        {amount == 0 ?
+                          <ItemCount stock={item.stock} initial={0} onAdd={addItem} /> :
+                          <CartAlert amount={amount}/>}
+                        
 
                     </div>
                 </div>
@@ -21,9 +31,6 @@ const ItemDetail = ({ item }) => {
 
         </>
     );
-}
-function add(counter) {
-    alert(`Se agregaron ${counter} al carrito de compras`);
 }
 
 export default ItemDetail;

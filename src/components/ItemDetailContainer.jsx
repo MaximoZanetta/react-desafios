@@ -103,7 +103,7 @@ const ItemDetailContainer = () => {
      const [item, setItem]= useState({})
      const params = useParams()
 
-     const promiseItem = new Promise((resolve,reject)=>{
+     const promiseItem = new Promise((resolve)=>{
          setTimeout(
              ()=>{
                  resolve(dataBase)
