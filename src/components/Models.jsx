@@ -1,15 +1,15 @@
 
-import data from "../data"
+// import data from "../data"
 
-const Models = () => {
-    return ( 
-        <div>
-            {data.map((categories)=> console.log(categories.car))}
+// const Models = () => {
+//     return ( 
+//         <div>
+//             {data.map((categories)=> console.log(categories.car))}
             
 
 
-        </div>
-     );
-}
+//         </div>
+//      );
+// }
  
-export default Models;
+// export default Models;

@@ -1,15 +1,24 @@
 
-import { useState } from "react";
+import { createContext, useContext, useState } from "react";
 import CartAlert from "./CartAlert";
+import { CartContext } from "./CartContext";
 import ItemCount from "./ItemCount";
 
 
 const ItemDetail = ({ item }) => {
     const [amount, setAmount] = useState(0)
-    const addItem = (amount)=> {
+    const { addItem } = useContext(CartContext)
+    const add = (amount)=> {
         console.log(amount)
         setAmount(amount);
+        addItem(item, amount)
     }
+
+    
+
+
+
+
     return (
         <>
             <div className="position-absolute top-50 start-50 translate-middle pa-abajo">
@@ -21,7 +30,7 @@ const ItemDetail = ({ item }) => {
                         <p className="card-text text-white">Disponibles: {item.stock}</p>
                         <p className="card-text text-white">$ {item.price} USD</p>
                         {amount == 0 ?
-                          <ItemCount stock={item.stock} initial={0} onAdd={addItem} /> :
+                          <ItemCount stock={item.stock} initial={0} onAdd={add} /> :
                           <CartAlert amount={amount}/>}
                         
 

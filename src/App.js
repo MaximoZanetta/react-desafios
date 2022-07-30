@@ -6,6 +6,7 @@ import ItemListContainer from "./components/ItemListContainer";
 import NavBar from "./components/NavBar";
 import 'boxicons';
 import Models from "./components/Models";
+import CartProvider from "./components/CartContext";
 
 
 
@@ -15,13 +16,14 @@ function App() {
   return (
     <>
     <BrowserRouter>
+    <CartProvider>
     <NavBar />
-    <Models />
     <Routes>
       <Route index path="/" element={<ItemListContainer />}></Route>
       <Route path="/category/:name" element={<ItemListContainer />}></Route>
       <Route path="/item/:id" element={<ItemDetailContainer />}></Route>
     </Routes> 
+    </CartProvider>
     </BrowserRouter>
     </>
     
