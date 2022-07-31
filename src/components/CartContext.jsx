@@ -14,13 +14,17 @@ const CartProvider = ({ children }) => {
     }
 
     const removeItem = (id) =>{
-        setCartItems(cartItems.filter(product=> product.id !== id))
+        setCartItems(cartItems.filter(product => product.id !== id))
     }
 
     const addItem = (item, quantity)=>{
         const nuevoCart = cartItems.filter(newItem => newItem.id !== item.id)
         nuevoCart.push({...item, quantity})
         setCartItems(nuevoCart)
+    }
+
+    const total = ()=>{
+        return cartItems.reduce((previous,current)=> previous + current.price * current.quantity,0)
     }
     
 
@@ -31,7 +35,9 @@ const CartProvider = ({ children }) => {
             clear,
             isInCart,
             removeItem,
-            addItem
+            addItem,
+            total,
+            cartItems
         }}>
             {children}
         </CartContext.Provider>
