@@ -13,6 +13,7 @@ const ItemCount = ({stock= 2, initial = 0, onAdd}) => {
         else if(operacion === "+" && counter < stock ){
             setCounter(counter + 1)
         }
+        
     }
     // function onAdd(){
     //     if (props.stock > 0 && props.count < props.stock) {

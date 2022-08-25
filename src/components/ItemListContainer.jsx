@@ -9,27 +9,31 @@ const ItemListContainer = () => {
   
   const { name } = useParams()
   const [items, setItems]= useState([])
-  const [loading, setLoading] = useState(false)      
+  const [loading, setLoading] = useState(true)      
       
   useEffect(()=> {
     setLoading(true)
     const querydb = getFirestore()
     const queryCollection = collection(querydb, 'products');
+    
     if(name) {
-      const queryFilter = query(queryCollection, where('model','==', name))
+      const queryFilter = query(queryCollection, where('car','==', name))
       getDocs(queryFilter)
       .then(res => setItems(res.docs.map(product => ({id: product.id, ...product.data()}))))
+      setLoading(false)
       } else {
         getDocs(queryCollection) 
         .then(res => setItems(res.docs.map(product => ({id: product.id, ...product.data()}))))
+        setLoading(false)
         // setItems(products)
       }
-        setLoading(false)
+      
       },[name])
 
       if(loading){
        return <Spinner />
-      } else{
+      }
+      
         return (
           <>
             <div className="abajo position-relative">
@@ -40,7 +44,7 @@ const ItemListContainer = () => {
       
            
            
-           )};
+           );
 }
         
           

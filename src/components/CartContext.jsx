@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import Swal from "sweetalert2";
 
 
 export const CartContext = createContext()
@@ -9,7 +10,7 @@ const CartProvider = ({ children }) => {
 
     const clear = () => setCartItems([])
 
-    const isInCart = (id) =>{
+    const isInCart = (id) => {
         return cartItems.find(itemInCart=> itemInCart.id === id) ? true : false;
     }
 
@@ -26,6 +27,13 @@ const CartProvider = ({ children }) => {
     const total = ()=>{
         return cartItems.reduce((previous,current)=> previous + current.price * current.quantity,0)
     }
+
+    const purchaseOrder = (id) => {
+        // setCartItems([]);
+        setCartItems([])
+        console.log(id)
+        Swal.fire('Orden aceptada', `Su id de compra es: ${id}`, 'success');
+      };
     
 
 
@@ -37,6 +45,7 @@ const CartProvider = ({ children }) => {
             removeItem,
             addItem,
             total,
+            purchaseOrder,
             cartItems
         }}>
             {children}
