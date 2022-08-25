@@ -1,25 +1,7 @@
 import Swal from "sweetalert2";
 
 const Validacion = (name,phone,email,confirmEmail) => {
-    // if(email !== confirmEmail){
-    //     Swal.fire({
-    //         title: 'Error!',
-    //         text: 'Invalid email',
-    //         icon: 'error',
-    //         confirmButtonText: 'Try again',
-    //     })
-    //     return false
-    // } else if(name==='' || name === ' '){
-    //     Swal.fire({
-    //         title: 'Error!',
-    //         text: 'Invalid name',
-    //         icon: 'error',
-    //         confirmButtonText: 'Try again',
-    //     })
-    //     return false
-    // }else {
-    //     return true
-    // }
+   
     const regexName = /^[a-z ,.'-]+$/i;
   const regexPhone =
     /^((?:\(?\d{2}\)?[- .]?\d{4}|\(?\d{4}\)?[- .]?\d{3}|\(?\d{5}\)?[- .]?\d{2})[- .]?\d{4})$/;

@@ -9,7 +9,7 @@ import CartProducts from "./CartProducts";
 
 const Cart = () => {
     const {cartItems, purchaseOrder} = useContext(CartContext)
-   const [orderInfo, setOrderInfo]=useState('')
+    const [orderInfo, setOrderInfo]=useState('')
    
    
 

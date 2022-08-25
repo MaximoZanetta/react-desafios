@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import ItemList from "./ItemList";
-import data from "../data"
 import { useParams } from "react-router-dom";
 import Spinner from "./Spinner";
 import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore';
@@ -12,19 +11,21 @@ const ItemListContainer = () => {
   const [loading, setLoading] = useState(true)      
       
   useEffect(()=> {
-    setLoading(true)
+    console.log('true')
     const querydb = getFirestore()
     const queryCollection = collection(querydb, 'products');
     
     if(name) {
       const queryFilter = query(queryCollection, where('car','==', name))
+      setLoading(false)
       getDocs(queryFilter)
       .then(res => setItems(res.docs.map(product => ({id: product.id, ...product.data()}))))
-      setLoading(false)
+      console.log('false')
       } else {
+        setLoading(false)
         getDocs(queryCollection) 
         .then(res => setItems(res.docs.map(product => ({id: product.id, ...product.data()}))))
-        setLoading(false)
+        console.log('false')
         // setItems(products)
       }
       
@@ -33,6 +34,7 @@ const ItemListContainer = () => {
       if(loading){
        return <Spinner />
       }
+      
       
         return (
           <>

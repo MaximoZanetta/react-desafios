@@ -43,6 +43,9 @@ const NavBar = () => {
                     <li>
                         <Link to={"category/Rolls-Royce"}>Rolls-Royce</Link>
                     </li>
+                    <li>
+                        <Link to={"orders"}>Mis Compras</Link>
+                    </li>
                     <CartWidget />
                 </ul>
             </header>
